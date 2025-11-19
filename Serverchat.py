@@ -1,8 +1,10 @@
+# import statments
 from fastapi import FastAPI
 from pydantic import BaseModel
 import requests
 import random
 import json
+
 
 def fruitget(fruit):
     with open("Fruit.json") as f:
@@ -22,7 +24,7 @@ def fruitdata(data: FruitData):
     returndata = fruitget(fruit)
     return returndata
 
-
+# testing function
 @chatserver.get("/test")
 
 def test():
@@ -47,7 +49,7 @@ def error404():
 def scrape(url):
     return requests.get(url)
 
-
+# function to recive data from inbox
 
 @chatserver.get("/DndGroupChatInbox")
 def Messages():
@@ -62,6 +64,8 @@ class MessageData(BaseModel):
     sender: str
     Message: str
 
+# function to send a message
+
 @chatserver.post("/DndGroupChatSendMessage")
 def DndGroupChatSendMessage(data: MessageData):
     with open("Chat.json") as f:
@@ -73,6 +77,7 @@ def DndGroupChatSendMessage(data: MessageData):
 
 
     
+
 
 
 
