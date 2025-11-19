@@ -5,7 +5,7 @@ import requests
 import random
 import json
 
-
+# ignore this code
 def fruitget(fruit):
     with open("Fruit.json") as f:
         data = json.load(f)
@@ -77,6 +77,7 @@ def DndGroupChatSendMessage(data: MessageData):
 
 
     
+
 
 
 
