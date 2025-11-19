@@ -1,7 +1,9 @@
+# import statments
 import requests
 import random
 import os
 import json
+# define url and inbox data
 URL = 'http://127.0.0.1:8000'
 os.system("cls")
 def get(CHAT):
@@ -20,6 +22,7 @@ def get(CHAT):
         return returntxt
     else:
         return "Chat not found"
+# main loop
 
 name = input("Enter your name: ")
 while True:
@@ -34,4 +37,5 @@ while True:
         pass
     else:
         message = {"sender":name,"Message":txt}
+
         response = requests.post(f"{URL}/DndGroupChatSendMessage",json=message)
